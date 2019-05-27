@@ -1,0 +1,54 @@
+<title>{% block title %} {% endblock %}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Baloo Bhai' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=QuickSand' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Prompt' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Courgette  ' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Akronim  ' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Shadows Into Light   ' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Kaushan Script ' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah ' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Playball' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Abril Fatface' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Fire/css/style.css' %}" type="text/css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <div class="row">
+            <div class="col-sm-2">
+                <a class="navbar-brand" href="{% url 'Fire:index' %}" style="font-family: 'Acme', cursive;"> WILDFIRE </a>
+            </div>
+            <div class="col-sm-6">
+                <form class="navbar-brand form-inline my-2 my-lg-0">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ request.GET.q }}">
+                        </div>
+                        <div class="col-sm-3">
+
+                            <!--<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <a class="navbar-brand" href="{% url 'Fire:add_event' %}" style="font-family: 'Acme', cursive;"><i class="fas fa-calendar"></i> ADD EVENT </a>
+            </div>
+        </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    {% block content %}
+
+    {% endblock %}
+</div>

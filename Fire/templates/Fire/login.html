@@ -1,0 +1,26 @@
+{% extends 'Fire/base.html' %}
+{% block title %} WildFire: {{event.event}} Comments {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="panel panel-info panel-body" style="margin: 50px; border-color: LightBlue">
+             {% if message %}
+                <div class="alert alert-danger">
+                    <h4>{{message}}</h4>
+                </div>
+            {% endif %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{formLogin|crispy}}
+                <div class="form-group">
+                    <button class="btn btn-info" style="width:425px;">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+{% endblock %}

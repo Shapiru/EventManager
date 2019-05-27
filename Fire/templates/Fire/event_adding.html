@@ -1,0 +1,20 @@
+{% extends 'Fire/base.html' %}
+{% block title %}WildFire: Add Event{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="panel panel-body" style="margin: 50px; border-color: LightBlue">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ formEvent|crispy }}
+                <div class="form-group">
+                    <button class="btn btn-info" style="width:410px;">CREATE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock %}
